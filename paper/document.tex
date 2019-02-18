@@ -6,8 +6,10 @@
 \usepackage{subfigure}
 \usepackage{microtype}
 \usepackage{cite}
+\usepackage[]{footmisc}
+\usepackage{booktabs}
 \usepackage{draftwatermark}
-\SetWatermarkLightness{0.8}
+\SetWatermarkLightness{0.85}
 \usepackage{ifpdf}
 \ifpdf
 \usepackage{hyperref}
@@ -28,7 +30,7 @@
 	In complex network analysis, community detection is often employed to find meaningful insights into the relationships between nodes.
 	Introduction material here \textellipsis
 	
-	Sections \ref{s:mod}, \ref{s:com}, and \ref{s:cent}, detail the foundations of modularity, community detection, and Katz/eigenvector centrality, respectively. Section \ref{s:randomGraphs} demonstrates the behavior of the Katz vs. eigenvector plots using ad-hoc modular networks formed from random graphs. Section \ref{s:realWorld} illustrates the utility of eigenvector and Katz centrality as features for an agglomerative clustering algorithm  that identifies prospective communities.
+	Sections \ref{s:mod}, \ref{s:com}, and \ref{s:cent}, detail the foundations of modularity, community detection, and Katz/eigenvector centrality, respectively. Section \ref{s:randomGraphs} demonstrates the behavior of the Katz vs. eigenvector centrality plots using ad-hoc modular networks formed from random graphs. Section \ref{s:realWorld} illustrates the utility of eigenvector and Katz centrality as features for an agglomerative clustering algorithm  that identifies prospective communities.
 	 
 	\section{Network Modularity}
 	\label{s:mod}
@@ -94,7 +96,7 @@
 	\end{equation}
 	If $\alpha$ is 0, all nodes' centralities are $\beta$. If $\alpha$ is $\frac{1}{\lambda_1}$, $(I-\alpha A)$ is singular, the inverse is undefined and the centralities diverge to infinity. For $0 < \alpha < \frac{1}{\lambda_1}$, the centralities converge. This centrality measure was created to account for the fact that in directed networks without strongly connected components, there are no nodes with non-zero eigenvector centrality. The free centrality guarantees all nodes have at least some centrality.
 	
-	It is evident from (\ref{eqn:evc}) and (\ref{eqn:katz}) that generally speaking, a node's Katz centrality is greater than it's eigenvector centrality. Normally, the exact value of a node's centrality is not so important as its relative value, so as to discern the order of importance. But the relationship between Katz and eigenvector centrality of the nodes can serve as in important indicator, as well will see, for differences in local connectivity.
+	It is evident from (\ref{eqn:evc}) and (\ref{eqn:katz}) that generally speaking, a node's Katz centrality is greater than it's eigenvector centrality. Normally, the exact value of a node's centrality is not so important as its relative value, so as to discern the order of importance. But the amount by which Katz centrality is greater than eigenvector centrality can serve as in important indicator, as well will see, for differences in local connectivity.
 	
 	\begin{figure}
 		\centering
@@ -191,9 +193,42 @@
 	
 	There are 317,080 nodes in over 5,000 ``ground truth" communities in this network. We sample the nodes in the two largest communities and take the induced subgraph, leaving our network with 13,326 nodes. Since communities are defined from publication venue, it is possible for nodes to belong to multiple communities. The Katz-eigen plot is shown in Figure \ref{fig:dblp_pre}. The orange and blue dots represent the nodes in communities one and two, respectively, and the green dots are nodes that are in both.
 	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.98\linewidth]{youtube.png}
+		\caption{Katz-eigen plot of two largest communities in the YouTube friendship network. This sampled graph has 3,269 nodes, and 25\% of nodes are members of both communities. %The lack of distinct clusters corresponds to poor modularity in the network.
+		}
+		\label{fig:youtube}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.98\linewidth]{amazon_product.png}
+		\caption{Katz-eigen plot of the two largest communities in the Amazon product network. The sampled graph has 328 nodes, with all nodes belonging to both ``ground-truth" communities. The red, blue, and green clusters are identified with agglomerative clustering using cosine affinity.}
+		\label{fig:amazon_product}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.98\linewidth]{amazon_health_clustered.png}
+		\caption{The Katz-eigen plot of the Amazon health product review network. The red and blue clusters are identified with the agglomerative clustering algorithm, using cosine affinity.}
+		\label{fig:amazon_health}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.98\linewidth]{amazon_beauty_clustered.png}
+		\caption{The Katz-eigen plot of the Amazon beauty product review network. The red, blue, and green clusters are identified with the agglomerative clustering algorithm, using cosine affinity.}
+		\label{fig:amazon_beauty}
+	\end{figure}
+	
 	We see two distinct vectors in the Katz-eigen plot: one dominated by primarily blue nodes, and the other dominated by orange and green. The wide angle between them suggests high modularity. In fact, between the two distinct communities, $Q=0.438$, and $Q/Q_{max} = 0.827$.
 	
 	Assume that these labels were not provided before hand. Using agglomerative clustering (implemented with Scikit-learn \cite{scikit-learn}) with complete linkage and cosine similarity as the affinity measurement, we can define two clusters of nodes based on proximity to the two prominent vectors in the Katz-eigen plot. The results of this clustering is shown in Figure \ref{fig:dblp_cluster}. Assuming these two node groupings, $Q=0.022$ and $Q/Q_{max}=0.565$. The strength of assortative mixing is 70\% of that seen with the ``ground-truth" community labels. $Q$ is so low here due to the imbalance in cluster size. The orange cluster consists of only 533 nodes, whereas the blue cluster contains the remaining 12,793 nodes. Thus, only a small fraction of the edges can be contained in the orange cluster.
+	
+	As suggested by the trends in Section \ref{s:randomGraphs}, lack of modular communities results in little-to-no distinguishable clusters in the Katz-eigen plot. This is illustrated in a YouTube friendship network, where ``ground-truth" communities are defined by user groups \cite{DBLP,youtube}. The Katz-eigen plot of this network is shown in Figure \ref{fig:youtube}. The significant overlap of the two communities on the plot indicates low modularity: $Q=0.049$ and $Q/Q_{max}=0.109$. In this case, the ``ground-truth" communities do not reflect the properties of communities from a networks perspective.
+	
+	Similarly, two largest ``ground-truth" communities in the Amazon product network \cite{youtube,DBLP} contain the same nodes. As a result, $Q=0$ and the Katz-eigen plot of the two communities are completely overlapped. These two defined communities provide no utility to understanding the network. But, as depicted in Figure \ref{fig:amazon_product}, there are three clusters of nodes identified by agglomerative clustering. Using these communities, $Q=0.254$ and $Q/Q_{max}=0.659$, this provides more insight into groupings within the network compared to the ``ground-truth" communities.
 	
 	%Note that in Figures \ref{fig:dblp_pre} and \ref{fig:dblp_cluster} that the lower vector is positioned much closer than the $x$ axis than we see in the ad-hoc networks. The position of the green cluster vector in Figure \ref{fig:example} remains relatively consistent with the $[1,1]$ vector throughout different ad-hoc networks; the blue cluster's vector moves more dramatically. This indicates that, when normalized, a node in the green community Katz centrality is roughly equivalent to its eigenvector centrality. Whereas a node in the blue community significantly benefits from the free centrality provided by Katz.
 	
@@ -207,31 +242,36 @@
 	
 	Clustering by cosine affinity on the Katz-eigen plot has shown the ability to detect more than two communities. Figure \ref{fig:amazon_beauty} shows the Katz-eigen plot of another Amazon review network of beauty products (created the same way as the health product network). Here, there are three clear clusters, indicating three communities in the 13,043 node network. With these defined communities, $Q=0.268$ and $Q/Q_{max}=0.721$.
 	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.98\linewidth]{amazon_health_clustered.png}
-		\caption{The Katz-eigen plot of the Amazon health product review network. The red and blue clusters are identified with the agglomerative clustering algorithm, using cosine affinity.}
-		\label{fig:amazon_health}
-	\end{figure}
-
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.98\linewidth]{amazon_beauty_clustered.png}
-		\caption{The Katz-eigen plot of the Amazon beauty product review network. The red, blue, and green clusters are identified with the agglomerative clustering algorithm, using cosine affinity.}
-		\label{fig:amazon_beauty}
-	\end{figure}
 	
 	\section{Conclusions}
-	In this work, we have showed that Katz and eigenvector centrality can serve as features for community detection. For undirected networks with sufficient modularity and/or difference in density of it's communities, the Katz-eigen plot displays clusters centered around distinct vectors. Agglomerative clustering with cosine similarity can identify these clusters, thereby allowing for automated identification of community membership for many nodes.
+	\label{s:conc}
+	In this work, we have showed that Katz and eigenvector centrality can serve as features for community detection. For undirected networks with sufficient modularity and/or difference in density of it's communities, the Katz-eigen plot displays clusters centered around distinct vectors. Agglomerative clustering with cosine similarity can identify these clusters, thereby allowing for automated identification of community membership for many nodes. A summary of this method's performance is given in Figure \ref{tab:performance}.
 	
-	This method was shown to perform comparably to pre-labeled ``ground truth" communities in real world networks. In other real world networks without node labels, the communities detected by the Katz-eigen method were strongly assortatively mixed, suggesting the method performs well.
+	This method was shown to detect communities with comparable modularity to that of pre-labeled ``ground truth" communities in real world networks. In other real world networks without node labels, the communities detected by the Katz-eigen method were strongly assortatively mixed, suggesting well-performing community detection.
 	
-	Future research will investigate the Katz-eigen community detection method on directed networks. Furthermore, the impact of edge weights on this method should be understood. 
+	Future research will investigate the Katz-eigen community detection method on directed networks. Furthermore, the impact of edge weights on this method should be more closely understood, particularly for signed networks.
+	
+	\begin{figure}
+		\centering
+		\begin{tabular}{lcc}
+			\toprule
+			\textbf{Network} & \textbf{Ground-truth} $Q/Q_{max}$ & \textbf{Detected $Q/Q_{max}$}\\
+			\midrule
+			DBLP & 0.827 & 0.565\\
+			YouTube & 0.109 & N/A\\
+			AMZN Product & 0.000 & 0.659\\
+			AMZN Health & N/A & 0.808\\
+			AMZN Beauty & N/A & 0.721\\
+			\bottomrule
+		\end{tabular}
+		\caption{Summary of the performance of Katz-eigen community detection on real-world networks.}
+		\label{tab:performance}
+	\end{figure}
 	
 	\section*{Acknowledgements}
 	Thank you to \textellipsis
-	Dr. Justin Ruths with the Department of Systems Engineering at the University of Texas at Dallas.
-	\label{s:conc}
+	%Dr. Justin Ruths with the Department of Systems Engineering at the University of Texas at Dallas.
+
 	\bibliography{references}
 	\bibliographystyle{IEEEtran}
 \end{document}

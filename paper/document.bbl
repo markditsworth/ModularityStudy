@@ -87,6 +87,12 @@ F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
   Machine learning in {P}ython,'' \emph{Journal of Machine Learning Research},
   vol.~12, pp. 2825--2830, 2011.
 
+\bibitem{youtube}
+A.~Mislove, M.~Marcon, K.~P. Gummadi, P.~Druschel, and B.~Bhattacharjee,
+  ``{Measurement and Analysis of Online Social Networks},'' in
+  \emph{Proceedings of the 5th ACM/Usenix Internet Measurement Conference
+  (IMC'07)}, San Diego, CA, October 2007.
+
 \bibitem{amazon}
 J.~McAuley, C.~Targett, J.~Shi, and A.~van~den Hengle, ``Image-based
   recommendations on styles and substitutes,'' in \emph{SIGIR}, 2015.
