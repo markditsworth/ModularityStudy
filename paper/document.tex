@@ -26,8 +26,10 @@
 	\end{abstract}
 	
 	\section{Introduction}
-	In complex network analysis, community detection is often employed to find meaningful insights into the relationships between nodes.
-	Introduction material here \textellipsis
+	In complex network analysis, community detection is often employed to find meaningful insights into the relationships between nodes. 
+	Applications include customer segmentation in co-purchasing networks, subject classification in semantic networks, etc. Most popular community detection algorithms rely on iterative heuristics to attempt modularity maximization. The combinatoric nature of these algorithms make their runtime ungainly for large networks, thus requiring expensive computing power to achieve results in a reasonable amount of time.
+	
+	This work demonstrates the utility of Katz centrality and eigenvector centrality as features in an unsupervised machine learning algorithm to detect communities in large, undirected, weighted and unweighted networks. This method is shown to produce well-defined communities (when possible) in a much faster runtime.
 	
 	Sections \ref{s:mod}, \ref{s:com}, and \ref{s:cent}, detail the foundations of modularity, community detection, and Katz/eigenvector centrality, respectively. Section \ref{s:randomGraphs} demonstrates the behavior of the Katz vs. eigenvector centrality plots using ad-hoc modular networks formed from random graphs. Section \ref{s:realWorld} illustrates the utility of eigenvector and Katz centrality as features for an agglomerative clustering algorithm  that identifies prospective communities.
 	 
@@ -97,6 +99,10 @@
 	
 	It is evident from (\ref{eqn:evc}) and (\ref{eqn:katz}) that generally speaking, a node's Katz centrality is greater than it's eigenvector centrality. Normally, the exact value of a node's centrality is not so important as its relative value, so as to discern the order of importance. But the amount by which Katz centrality is greater than eigenvector centrality can serve as in important indicator, as well will see, for differences in local connectivity.
 	
+	\section{Application to Ad-hoc Modular Networks}
+	\label{s:randomGraphs}
+	We demonstrate the utility of the Katz-eigen plot first on synthetic, ad-hoc modular networks. These networks are constructed to guarantee the existence of two communities, but with modularity and relative density more or less controllable. 
+	
 	\begin{figure}
 		\centering
 		\subfigure[][]{
@@ -133,9 +139,9 @@
 		\label{fig:dist}
 	\end{figure}
 	
-	\section{Application to Ad-hoc Modular Networks}
-	\label{s:randomGraphs}
-	We demonstrate the utility of the Katz-eigen plot first on synthetic, ad-hoc modular networks. These networks are constructed to guarantee the existence of two communities, but with modularity and relative density more or less controllable. 
+	%\section{Application to Ad-hoc Modular Networks}
+	%\label{s:randomGraphs}
+	%We demonstrate the utility of the Katz-eigen plot first on synthetic, ad-hoc modular networks. These networks are constructed to guarantee the existence of two communities, but with modularity and relative density more or less controllable. 
 	
 	The ad-hoc modular networks are formed as follows. Two random graphs are generated (in this work we use the exponential-random (ER) model\cite{ER} and the Barab\'asi-Albert (BA) model\cite{BA}) with $n_1$ and $n_2$ nodes. 
 	Adjusting the $p$ parameter (the probability of edge existance) for the ER model and the $m$ parameter (the number of edges added by each new node) for the BA model controls the density of each random network.
@@ -180,7 +186,7 @@
 	\begin{figure}
 	\centering
 	\includegraphics[width=0.98\linewidth]{dblp_cluster.png}
-	\caption{Katz-eigen plot of the sampled DBLP clustering showing the clusters found by agglomerative clustering algorithm. The affinity measurement is cosine similarity, averaged \textellipsis}
+	\caption{Katz-eigen plot of the sampled DBLP clustering showing the clusters found by agglomerative clustering algorithm. The affinity measurement is cosine similarity.}
 	\label{fig:dblp_cluster}
 	\end{figure}
 
@@ -249,6 +255,8 @@
 	This method was shown to detect communities with comparable modularity to that of pre-labeled ``ground truth" communities in real world networks. In other real world networks without node labels, the communities detected by the Katz-eigen method were strongly assortatively mixed, suggesting well-performing community detection.
 	
 	Future research will investigate the Katz-eigen community detection method on directed networks. Furthermore, the impact of edge weights on this method should be more closely understood, particularly for signed networks.
+	
+	All code for this project is available at (link to github).
 	
 	\begin{figure}
 		\centering

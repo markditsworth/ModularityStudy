@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  4 MAR 2019 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  26 MAR 2019 21:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -502,7 +502,7 @@ LaTeX Info: Redefining \nameref on input line 20.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 38.
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -510,7 +510,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -521,134 +521,132 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 ]
-<../BA_Graph/example.png, id=86, 390.45876pt x 266.9975pt>
+<../BA_Graph/example.png, id=82, 390.45876pt x 266.9975pt>
 File: ../BA_Graph/example.png Graphic file (type png)
 
 <use ../BA_Graph/example.png>
-Package pdftex.def Info: ../BA_Graph/example.png used on input line 104.
+Package pdftex.def Info: ../BA_Graph/example.png used on input line 110.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
 
-<../ER_Graph/example.png, id=88, 390.45876pt x 266.9975pt>
+<../ER_Graph/example.png, id=84, 390.45876pt x 266.9975pt>
 File: ../ER_Graph/example.png Graphic file (type png)
 
 <use ../ER_Graph/example.png>
-Package pdftex.def Info: ../ER_Graph/example.png used on input line 107.
+Package pdftex.def Info: ../ER_Graph/example.png used on input line 113.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
 
-<../BA_Graph/angle.png, id=93, 391.4625pt x 266.9975pt>
+<../BA_Graph/angle.png, id=89, 391.4625pt x 266.9975pt>
 File: ../BA_Graph/angle.png Graphic file (type png)
 
 <use ../BA_Graph/angle.png>
-Package pdftex.def Info: ../BA_Graph/angle.png used on input line 116.
+Package pdftex.def Info: ../BA_Graph/angle.png used on input line 122.
 (pdftex.def)             Requested size: 246.95892pt x 168.44151pt.
 
-<../ER_Graph/angle.png, id=94, 391.4625pt x 266.9975pt>
+<../ER_Graph/angle.png, id=90, 391.4625pt x 266.9975pt>
 File: ../ER_Graph/angle.png Graphic file (type png)
 
 <use ../ER_Graph/angle.png>
-Package pdftex.def Info: ../ER_Graph/angle.png used on input line 119.
+Package pdftex.def Info: ../ER_Graph/angle.png used on input line 125.
 (pdftex.def)             Requested size: 246.95892pt x 168.44151pt.
 
-<../BA_Graph/cluster_distance.png, id=99, 396.48125pt x 266.9975pt>
+<../BA_Graph/cluster_distance.png, id=95, 396.48125pt x 266.9975pt>
 File: ../BA_Graph/cluster_distance.png Graphic file (type png)
 
 <use ../BA_Graph/cluster_distance.png>
-Package pdftex.def Info: ../BA_Graph/cluster_distance.png used on input line 12
-8.
+Package pdftex.def Info: ../BA_Graph/cluster_distance.png used on input line 13
+4.
 (pdftex.def)             Requested size: 246.95892pt x 166.31079pt.
 
-<../ER_Graph/cluster_distance.png, id=100, 390.45876pt x 266.9975pt>
+<../ER_Graph/cluster_distance.png, id=96, 390.45876pt x 266.9975pt>
 File: ../ER_Graph/cluster_distance.png Graphic file (type png)
 
 <use ../ER_Graph/cluster_distance.png>
 Package pdftex.def Info: ../ER_Graph/cluster_distance.png used on input line 13
-1.
+7.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
- [2 <../BA_Graph/example.png> <../ER_Graph/example.png>] [3 <../BA_Graph/angle.
-png> <../ER_Graph/angle.png> <../BA_Graph/cluster_distance.png> <../ER_Graph/cl
-uster_distance.png>]
-<../BA_Graph/cluster_length.png, id=154, 387.4475pt x 266.9975pt>
+ [2]
+<../BA_Graph/cluster_length.png, id=134, 387.4475pt x 266.9975pt>
 File: ../BA_Graph/cluster_length.png Graphic file (type png)
 
 <use ../BA_Graph/cluster_length.png>
-Package pdftex.def Info: ../BA_Graph/cluster_length.png used on input line 165.
+Package pdftex.def Info: ../BA_Graph/cluster_length.png used on input line 171.
 
 (pdftex.def)             Requested size: 246.95892pt x 170.18521pt.
 
-<../ER_Graph/cluster_length.png, id=155, 387.4475pt x 266.9975pt>
+<../ER_Graph/cluster_length.png, id=135, 387.4475pt x 266.9975pt>
 File: ../ER_Graph/cluster_length.png Graphic file (type png)
 
 <use ../ER_Graph/cluster_length.png>
-Package pdftex.def Info: ../ER_Graph/cluster_length.png used on input line 168.
+Package pdftex.def Info: ../ER_Graph/cluster_length.png used on input line 174.
 
 (pdftex.def)             Requested size: 246.95892pt x 170.18521pt.
 
-<dblp_2_kev.png, id=160, 397.485pt x 266.9975pt>
+<dblp_2_kev.png, id=140, 397.485pt x 266.9975pt>
 File: dblp_2_kev.png Graphic file (type png)
  <use dblp_2_kev.png>
-Package pdftex.def Info: dblp_2_kev.png used on input line 175.
+Package pdftex.def Info: dblp_2_kev.png used on input line 181.
 (pdftex.def)             Requested size: 246.95892pt x 165.89116pt.
 
-<dblp_cluster.png, id=161, 390.45876pt x 266.9975pt>
+<dblp_cluster.png, id=141, 390.45876pt x 266.9975pt>
 File: dblp_cluster.png Graphic file (type png)
  <use dblp_cluster.png>
-Package pdftex.def Info: dblp_cluster.png used on input line 182.
+Package pdftex.def Info: dblp_cluster.png used on input line 188.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <../BA_Graph/cluster_length.png> <../ER_Graph/cluster_length.png> <./dblp_2
-_kev.png> <./dblp_cluster.png>] <youtube.png, id=183, 390.45876pt x 266.9975pt>
+[3 <../BA_Graph/example.png> <../ER_Graph/example.png> <../BA_Graph/angle.png> 
+<../ER_Graph/angle.png>] <youtube.png, id=162, 390.45876pt x 266.9975pt>
 File: youtube.png Graphic file (type png)
 
 <use youtube.png>
-Package pdftex.def Info: youtube.png used on input line 197.
+Package pdftex.def Info: youtube.png used on input line 203.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
- <amazon_product.png, id=184, 390.45876pt x 266.9975pt>
+ <amazon_product.png, id=163, 390.45876pt x 266.9975pt>
 File: amazon_product.png Graphic file (type png)
 
 <use amazon_product.png>
-Package pdftex.def Info: amazon_product.png used on input line 205.
+Package pdftex.def Info: amazon_product.png used on input line 211.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
 
-<amazon_health_clustered.png, id=185, 390.45876pt x 266.9975pt>
+<amazon_health_clustered.png, id=164, 390.45876pt x 266.9975pt>
 File: amazon_health_clustered.png Graphic file (type png)
 
 <use amazon_health_clustered.png>
-Package pdftex.def Info: amazon_health_clustered.png used on input line 212.
+Package pdftex.def Info: amazon_health_clustered.png used on input line 218.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
 
-<amazon_beauty_clustered.png, id=186, 390.45876pt x 266.9975pt>
+<amazon_beauty_clustered.png, id=165, 390.45876pt x 266.9975pt>
 File: amazon_beauty_clustered.png Graphic file (type png)
 
 <use amazon_beauty_clustered.png>
-Package pdftex.def Info: amazon_beauty_clustered.png used on input line 219.
+Package pdftex.def Info: amazon_beauty_clustered.png used on input line 225.
 (pdftex.def)             Requested size: 246.95892pt x 168.87337pt.
- [5 <./youtube.png> <./amazon_product.png> <./amazon_health_clustered.png> <./a
-mazon_beauty_clustered.png>]
-Overfull \hbox (26.32787pt too wide) in paragraph at lines 255--266
+ [4 <../BA_Graph/cluster_distance.png> <../ER_Graph/cluster_distance.png> <../B
+A_Graph/cluster_length.png> <../ER_Graph/cluster_length.png> <./dblp_2_kev.png>
+] [5 <./dblp_cluster.png> <./youtube.png> <./amazon_product.png> <./amazon_heal
+th_clustered.png> <./amazon_beauty_clustered.png>]
+Overfull \hbox (26.32787pt too wide) in paragraph at lines 263--274
  [][] 
  []
 
 (./document.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
  [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: A0C28D3611F86071B84AC6330978EE6B;454.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 276.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
- 9161 strings out of 494945
- 141674 string characters out of 6181032
- 269218 words of memory out of 5000000
+ 9164 strings out of 494945
+ 141698 string characters out of 6181032
+ 275619 words of memory out of 5000000
  12067 multiletter control sequences out of 15000+600000
- 52436 words of font info for 218 fonts, out of 8000000 for 9000
+ 52555 words of font info for 220 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 31i,10n,38p,943b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,10n,38p,943b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/
@@ -668,7 +666,7 @@ ublic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on document.pdf (6 pages, 404700 bytes).
+Output written on document.pdf (6 pages, 405145 bytes).
 PDF statistics:
  301 PDF objects out of 1000 (max. 8388607)
  234 compressed objects within 3 object streams
