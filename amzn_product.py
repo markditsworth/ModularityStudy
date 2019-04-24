@@ -4,6 +4,8 @@ Calculates the Katz-eigen plot of the amazon product graph and finds the best cl
 
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import zen
 import clusteringAlgo as CA
@@ -88,7 +90,7 @@ def main():
         plt.scatter(evc[c],kc[c],s=8)
     plt.xlabel('Eigenvector cenrality (normalized)')
     plt.ylabel('Katz centrality (normalized)')
-    plt.show()
+    plt.savefig('amzn_product_ke_plot.png')
 
     ClassDict = {}
     for i,c in enumerate(clusters):
