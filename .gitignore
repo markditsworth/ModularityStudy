@@ -1,4 +1,5 @@
 *.txt
+*.pyc
 BTW.ipynb
 BTW_files/
 notebook.tex
