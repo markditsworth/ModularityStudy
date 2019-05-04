@@ -8,7 +8,7 @@ def MSE(x,y,m):
     '''
     x_ = (m*y+x)/(m**2 + 1)
     y_ = (y*(m**2) + m*x)/(m**2 + 1)
-    return np.sum(np.power(x-x_,2) + np.power(y-y_,2))/len(x)
+    return np.sum(np.power(x-x_,2) + np.power(y-y_,2))
     
 
 def slope(angle):
