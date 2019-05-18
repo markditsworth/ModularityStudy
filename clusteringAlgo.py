@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def MSE(x,y,m):
     '''
@@ -70,11 +71,13 @@ def optimizeAngles(angle,error,N,plot=False):
             if x_[i-1] < 0 and x_[i] >= 0:
                 ang.append(t[i])
     if plot:
+        plt.plot(angle*180/np.pi,error,label='Raw Error')
         for a in ang:
             plt.vlines(ymin=np.min(x),ymax=np.max(x),x=a*180/np.pi,linestyle='--',color='grey')
-        plt.plot(angle[N-1:]*180/np.pi,x)
+        plt.plot(angle[N-1:]*180/np.pi,x,label='Moving Average')
         plt.xlabel('Angle (deg.)')
         plt.ylabel('Sum of Squared Orth. Error')
+        plt.legend()
         plt.title('Identification of Local Minima')
         plt.show()
 
