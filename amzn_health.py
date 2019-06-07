@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
-import matplotib.pyplot as plt
+import matplotlib.pyplot as plt
 import zen
 import clusteringAlgo as CA
 
@@ -55,9 +55,9 @@ def main():
 
     for c in clusters:
         plt.scatter(evc[c],kc[c],s=8)
-    plt.xlabel('Eigenvector centrality (normalized)')
-    plt.ylabel('Katz centrality (normalized)')
-    plt.svaefig('amzn_health_ke_plot.png')
+    plt.xlabel('Eigenvector centrality (normalized)',fontsize=14)
+    plt.ylabel('Katz centrality (normalized)',fontsize=14)
+    plt.savefig('amzn_health_ke_plot.png')
 
     ClassDict = {}
     for i,c in enumerate(clusters):

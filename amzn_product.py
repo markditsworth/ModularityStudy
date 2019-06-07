@@ -83,14 +83,15 @@ def main():
     kc = kc - np.min(kc)
     kc = kc / np.max(kc)
 
-    clusters = CA.lineClustering(evc,kc,dx=0.55,window=10)
+    clusters = CA.lineClustering(evc,kc,dx=1,window=10)
 
     for c in clusters:
         print len(c)
         plt.scatter(evc[c],kc[c],s=8)
-    plt.xlabel('Eigenvector cenrality (normalized)')
-    plt.ylabel('Katz centrality (normalized)')
+    plt.xlabel('Eigenvector cenrality (normalized)',fontsize=14)
+    plt.ylabel('Katz centrality (normalized)',fontsize=14)
     plt.savefig('amzn_product_ke_plot.png')
+    plt.close()
 
     ClassDict = {}
     for i,c in enumerate(clusters):

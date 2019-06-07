@@ -62,7 +62,7 @@ def lineFinder(x, y, dtheta=0.01, dx=0.05):
 
 def optimizeAngles(angle,error,N,plot=False):
     N=10
-    x = pd.Series(error).rolling(window=N).mean().iloc[N-1:].values
+    x = pd.Series(error).rolling(window=N,center=True).mean().iloc[N-1:].values
     x_ = np.diff(x)
     t = angle[N:]
     ang = []
