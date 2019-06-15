@@ -71,10 +71,10 @@ def optimizeAngles(angle,error,N,plot=False):
             if x_[i-1] < 0 and x_[i] >= 0:
                 ang.append(t[i])
     if plot:
-        plt.plot(angle*180/np.pi,error,label='Raw Error')
+        plt.plot(angle*180/np.pi,error,label='Raw Error',color='k',linestyle=':')
         for a in ang:
             plt.vlines(ymin=np.min(x),ymax=np.max(x),x=a*180/np.pi,linestyle='--',color='grey')
-        plt.plot(angle[N-1:]*180/np.pi,x,label='Moving Average')
+        plt.plot(angle[N-1:]*180/np.pi,x,label='Moving Average',color='k',linestyle='-')
         plt.xlabel('Angle (deg.)')
         plt.ylabel('Sum of Squared Orth. Error')
         plt.legend()
