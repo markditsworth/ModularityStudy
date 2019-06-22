@@ -1,0 +1,15 @@
+>>> import os
+>>> os.chdir('/home')
+>>> import look_at_louvain
+>>> look_at_louvain.main()
+Nodes: 1000
+Edges: 5032
+16 communities found.
+Q:            0.268
+Qmax:         0.897
+Normalized Q: 0.299
+manual community assignment:
+0.309446884929
+0.329319698919
+0.93965494911
+

@@ -80,9 +80,9 @@ def modularity(G,classDict,classList):
 def main(exists=False):
     if not exists:
         G_synth = modular_graph(500,500,2,8,100,katz_alpha=1e-4)
-        zen.io.gml.write(G_synth,'/opt/adhoc.gml')
+        zen.io.gml.write(G_synth,'adhoc.gml')
     else:
-        G_synth = zen.io.gml.read('/opt/adhoc.gml')
+        G_synth = zen.io.gml.read('adhoc.gml')
 
     print "Nodes: %d"%G_synth.num_nodes
     print "Edges: %d"%G_synth.num_edges
@@ -106,7 +106,7 @@ def main(exists=False):
     kc = katz(G_synth,alpha=1e-4)
     kc = kc - np.min(kc)
     kc = kc / np.max(kc)
-    GROUP = [1,2,3,4]
+    GROUP = [1,2,4,5]
     fig = plt.plot(figsize=(12,8))
     for i,com in enumerate(cset.communities()):
         if i+1 in GROUP:
@@ -117,7 +117,7 @@ def main(exists=False):
     plt.legend()
     plt.xlim([-0.04,1])
     plt.ylim([-0.04,1])
-    plt.savefig('/opt/louvain1.png')
+    plt.savefig('figures/louvain1.eps',bbox_inches='tight')
     plt.close()
     fig = plt.plot(figsize=(12,8))
     for i,com in enumerate(cset.communities()):
@@ -127,7 +127,7 @@ def main(exists=False):
     plt.xlabel('Eigenvector centrality (normalized)',fontsize=14)
     plt.ylabel('Katz centrality (normalized)',fontsize=14)
     plt.legend()
-    plt.savefig('/opt/louvain2.png')
+    plt.savefig('figures/louvain2.eps',bbox_inches='tight')
 
     idx = np.where(evc>0.025)[0]
 
