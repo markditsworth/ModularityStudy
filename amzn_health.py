@@ -57,7 +57,7 @@ def main():
         plt.scatter(evc[c],kc[c],s=8)
     plt.xlabel('Eigenvector centrality (normalized)',fontsize=14)
     plt.ylabel('Katz centrality (normalized)',fontsize=14)
-    plt.savefig('amzn_health_ke_plot.png')
+    plt.savefig('figures/amzn_health_ke_plot.eps',bbox_inches='tight')
 
     ClassDict = {}
     for i,c in enumerate(clusters):

@@ -58,7 +58,8 @@ def main():
         plt.scatter(evc[c],kc[c],s=8)
     plt.xlabel('Eigenvector centrality (normalized)',fontsize=14)
     plt.ylabel('Katz centrality (normalized)',fontsize=14)
-    plt.savefig('amzn_beauty_ke_plot.png')
+    plt.savefig('figures/amzn_beauty_ke_plot.eps',bbox_inches='tight')
+    plt.close()
 
     ClassDict = {}
     ClassList = np.zeros(G.num_nodes)

@@ -79,7 +79,7 @@ def optimizeAngles(angle,error,N,plot=False):
         plt.ylabel('Sum of Squared Orth. Error')
         plt.legend()
         plt.title('Identification of Local Minima')
-        plt.show()
+        plt.savefig('curve.eps',bbox_inches='tight')
 
     return ang
 
