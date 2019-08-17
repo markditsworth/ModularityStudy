@@ -17,7 +17,7 @@ def modularity(G,classDict,classList):
     qmax = 1 - rand
     return Q, qmax
 
-def louvain_community_detection(G):
+def louvain_community_detection(G,network_type):
     cset = louvain(G)
 
     comm_dict = {}
@@ -36,7 +36,7 @@ def louvain_community_detection(G):
 def main(network_type):
     G = zen.io.gml.read('amazon_reviews_'+network_type+'.gml',weight_fxn=lambda x: x['weight'])
     start_time = time.time()
-    louvain_community_detection(G)
+    louvain_community_detection(G,network_type)
     stop_time = time.time()
     with open(network_type+'_network_info.txt','a') as fObj:
         fObj.write("Elapsed time (seconds): %.3f"%(stop_time - start_time))
