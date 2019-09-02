@@ -1,0 +1,4 @@
+34 communities found.
+Q:            0.413
+Normalized Q: 0.543
+Elapsed time (seconds): 1397917.705
